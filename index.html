@@ -1,0 +1,189 @@
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<div class="cont">
+		<div class="guide">
+<div class="guide-card">
+	<p>
+		這是一個勇者打怪物的遊戲，點擊畫面中央按鈕即可攻擊，傷害為隨機
+	</p>
+	<div class="guide-btn">知道了</div>
+</div>
+		</div>
+		<div class="loser-input-cont">
+			<div class="loser-input">
+
+				<div class="lose-title">你輸了 但你可以在敗者牆留言喔</div>
+
+				<input type="text" class="all-name-input lose-name-input" id="userName" name="userName"
+					placeholder="輸家名">
+				<textarea class="all-textarea" name="userText" id="userText" col="20" rows="10"
+					placeholder="說話啊! 輸家"></textarea>
+				<div class="submit loser-submit" onclick="loserSubmit()">上傳</div>
+			</div>
+
+
+		</div>
+		<div class="winner-input-cont">
+			<div class="winner-input">
+
+				<div class="winner-title">你贏了 你可以在勝者牆留言喔</div>
+
+				<input type="text" class="all-name-input" id="wuserName" name="wuserName" placeholder="贏家名">
+				<textarea class="all-textarea" name="wuserText" id="wuserText" col="20" rows="10"
+					placeholder="勝利感言"></textarea>
+				<div class="submit winner-submit" onclick="winnerSubmit()">上傳</div>
+			</div>
+
+
+		</div>
+
+		<div class="leftwall walls">
+			<div class="border bdl">
+				<div class="w-all-title">
+					<h1>敗者牆</h1>
+
+				</div>
+
+
+			</div>
+		</div>
+		<div class="center">
+
+
+			<div class="characters">
+				<div class="monster-all">
+					<img src="images/monster.png" class="monster">
+					<div class="monster-hp">
+						<div class="monster-hp-length">
+							<div class="monster-hp-rm"></div>
+						</div>
+						<div class="monster-hp-num">150/150</div>
+					</div>
+					<div class="monster-hurted">-15</div>
+					<div class="monster-attack"></div>
+				</div>
+				<div class="brave-all">
+					<div class="brave-hp">
+						<div class="brave-hp-length">
+							<div class="brave-hp-rm"></div>
+						</div>
+						<div class="brave-hp-num">100/100</div>
+					</div>
+					<img src="images/brave.png" class="brave">
+					<div class="brave-hurted">-15</div>
+					<div class="brave-attack"></div>
+				</div>
+
+			</div>
+			<div class="attack">
+				<div class="attack-trigger"></div>
+				<div class="attack-prompt">
+
+				</div>
+				<div class="attack-num">
+					<p>5</p>
+					<div class="attack-prompt-text">tap to Attack!</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="rightwall walls">
+			<div class="border bdr">
+				<div class="w-all-title">
+					<h1>勝者牆</h1>
+				</div>
+
+				<!-- <div class="textcard r-card">
+					<div class="card-name-r">
+						aa
+					</div>
+					<div class="card-each-text r-each-text">
+						你好
+					</div>
+				</div> -->
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Bootstrap CSS -->
+
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+		integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<title>Hello, world!</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+	<!-- <form action="https://script.google.com/macros/s/AKfycbxXOigduRZxvvvKkPZdV4m6f_tezO6yVlQn7ynkgz_fFDzSrOXPSIeGyQxyaqtCloWxHg/exec" method="POST">
+	  <label for="name">name:</label>
+	  <input type="text" id="name" name="name">
+	  <br>
+	  <label for="imgURL">imgURL:</label>
+	  <input type="text" id="imgURL" name="imgURL">
+	  <br>
+	  <label for="content">content:</label>
+	  <input type="text" id="content" name="content">
+	  <br>
+		<input type="hidden" id="method" name="method" value="write2">  
+	  <br><br>
+	  <input type="submit" value="送出">
+	</form> -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+		integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="./js/main.js"></script>
+
+</body>
+<template id="Template01" style="display: none;">
+	<div class="textcard l-card">
+		<div class="card-name-l">
+			USER_NAME_HERE
+		</div>
+		<div class="card-each-text l-each-text">
+			TEXT_HERE
+		</div>
+	</div>
+</template>
+<template id="Template02" style="display: none;">
+	<div class="textcard r-card">
+		<div class="card-name-r">
+			USER_NAME_HERE
+		</div>
+		<div class="card-each-text r-each-text">
+			TEXT_HERE
+		</div>
+	</div>
+</template>
+
+</html>
